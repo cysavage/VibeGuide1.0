@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: Helvetica;
 }
 body {
 	text-align: center;
@@ -28,17 +29,23 @@ header {
 .logo a {
 	text-decoration: none;
 	font-size: 30px;
-	font-family: poppins;
+	font-family: Helvetica;
 	color: #fff;
 	letter-spacing: 5px;
 }
+
+.active {
+	height: 10px;
+}
+
 nav {
 	float: right;
 	line-height: 100px;
 }
+
 nav a {
 	text-decoration: none;
-	font-family: poppins;
+	font-family: Helvetica;
 	letter-spacing: 4px;
 	font-size: 20px;
 	margin: 0 10px;
@@ -49,7 +56,7 @@ nav a {
 	height: 500px;
 	position: fixed;
 	top: 100px;
-	background-image:url(vibe.jpg);
+	background-image:url("images/vibe.jpg");
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center center;
@@ -57,7 +64,7 @@ nav a {
 .banner-area h2 {
 	padding-top: 8%;
 	font-size: 120px;
-	font-family: poppins;
+	font-family: Helvetica;
 	text-transform: uppercase;
 	color: #fff;
 }
@@ -71,7 +78,7 @@ nav a {
 	background-color: #fff;
 }
 .content-area h2 {
-	font-family: poppins;
+	font-family: Helvetica;
 	letter-spacing: 4px;
 	padding-top: 30px;
 	font-size: 40px;
@@ -80,7 +87,7 @@ nav a {
 }
 .content-area p {
 	padding: 2% 0px;
-	font-family: poppins;
+	font-family: Helvetica;
 	line-height: 30px;
 }
 
@@ -131,6 +138,72 @@ nav a {
  left : 0; 
  position : 
  absolute; z-index : 200;
-overflow: hidden;}
+overflow: hidden;
+}
 
 
+/* Sign Up form Styling */
+.signup-form {
+	padding-top: 150px;
+}
+
+.signup-form table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color:  #555;
+	border: 10px solid #04AA6D;
+	border-radius: 10px;
+}
+
+div.body-image {
+	background-image: url("images/vibe1.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 1400px;
+}
+div.body-image2 {
+	background-image: url("images/vibe3.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 1400px;
+}
+
+.signup-form table tr:first-child  {
+	text-align: center;
+	font-family: Helvetica;
+}
+
+.signup-form td {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.signup-form input {
+	width: 50%;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.signup-form button {
+	width: 90px;
+	height: 40px;
+	background-color: #04AA6D;
+	border-radius: 6px;
+	color: white;
+	border: none;
+}
+
+.registration-images {
+	width: 80%;
+
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.wrapper h2 {
+	text-align: center;
+	vertical-align: middle;
+}
