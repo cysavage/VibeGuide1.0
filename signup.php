@@ -1,12 +1,15 @@
 <?php 
 include_once 'header.php';
 ?>
+<div class="body-image2">
     <section class="signup-form">
-        <h2>Sign Up:</h2>
         <form action ="includes/signup.inc.php" method="post">
-            <input type="text" name="firstname" placeholder="First Name"><br>
-            <input type="text" name="lastname" placeholder="Last Name"><br>
-            <input type="text" name="email" placeholder="E-mail"><br>
+		
+		<table>
+				<tr><td><h1>Create An Account</h1></tr></td>
+				<tr><td><input type="text" name="firstname" placeholder="First Name"></td></tr>
+				<tr><td><input type="text" name="lastname" placeholder="Last Name"></td></tr>
+				<tr><td><input type="text" name="email" placeholder="E-mail"></td></tr>
             <!-- Birthday Drop Down
   
             <label >birthday : </label>           
@@ -16,12 +19,15 @@ include_once 'header.php';
             <br>
             
             -->
-            <input type="text" name="userid" placeholder="Username"><br>
-            <input type="password" name="password" placeholder="Password"><br>
-            <input type="password" name="passrepeat" placeholder="Confirm Password"><br>
-            <button type="submit" name="submit">Sign up</button>
+				<tr><td><input type="text" name="userid" placeholder="Username"></td></tr>
+				<tr><td><input type="password" name="password" placeholder="Password"></td></tr>
+				<tr><td><input type="password" name="passrepeat" placeholder="Confirm Password"></td></tr>
+				<tr><td><button type="submit" name="submit">Sign up</button>
+		</table>
+		
         </form>
         
+		
     </section>
 
 <?php 

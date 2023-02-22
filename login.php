@@ -1,17 +1,17 @@
 <?php 
 include_once 'header.php';
 ?>
-
+<div class="body-image">
     <section class="signup-form">
-        <h2>Log in:</h2>
-        <form action ="includes/login.inc.php" method="post">
-          
-            <input type="text" name="userid" placeholder="Username/E-mail"><br>
-            <input type="password" name="pass" placeholder="Password"><br>
-           
-            <button type="submit" name="submit">Log in</button>
-        </form>
         
+        <form action ="includes/login.inc.php" method="post">
+			<table>
+				<tr><td><h1>Log In</h1></tr></td>
+				<tr><td><input type="text" name="userid" placeholder="Username/E-mail"></td></tr>
+				<tr><td><input type="password" name="pass" placeholder="Password"></td></tr>
+				<tr><td><button type="submit" name="submit">Log in</button></td></tr>
+			</table>
+        </form>
     </section>
 
 
