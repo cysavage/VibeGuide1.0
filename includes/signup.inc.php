@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
     require_once 'functions.inc.php';
     
     if(emptyInputSignup($firstname, $lastname, $email, $username, $password, $passrepeat)!==false){
-        header("location: ../signup.php?error=emptyinput");
+        header("location: ../signup.php?error=EmptyInput");
         exit();
     }
     if(InvalidUserid($username)!==false){

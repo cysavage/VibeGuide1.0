@@ -23,12 +23,38 @@ include_once 'header.php';
 				<tr><td><input type="password" name="password" placeholder="Password"></td></tr>
 				<tr><td><input type="password" name="passrepeat" placeholder="Confirm Password"></td></tr>
 				<tr><td><button type="submit" name="submit">Sign up</button>
-		</table>
-		
+		</table>		
         </form>
+
+<?php
+    if(isset($_GET["error"])){
+        if($_GET["error"] == "EmptyInput") {
+            echo "<p>Fill in all the fields!</p>";
+        }
+        else if($_GET["error"] == "InvalidUserIDt") {
+            echo "<p>Choose a proper Username!</p>";
+        } 
+        else if($_GET["error"] == "InvalidEmail") {
+            echo "<p>Choose a proper E-mail!</p>";
+        } 
+        else if($_GET["error"] == "PasswordsDontMatch") {
+            echo "<p>The Passwords don't match!</p>";
+        } 
+        else if($_GET["error"] == "UserTaken") {
+            echo "<p>Username already taken!</p>";
+        }
+        else if($_GET["error"] == "stmtfailed") {
+            echo "<p>Something went wrong!</p>";
+        } 
+        else if($_GET["error"] == "none") {
+            echo "<p>You successfully created an account!</p>";
+        } 
+    }
+
+?>
         
-		
     </section>
+</div>
 
 <?php 
 include_once 'footer.php';

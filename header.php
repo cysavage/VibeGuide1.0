@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,13 +99,26 @@
                
                 </div>
                 <nav> 
-  <a class="active" href="index.php"><i class="fa-solid fa-house"></i> Home</a>
-  <a href="#"><i class="fa-solid fa-bolt"></i>About Us</a>
-  <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
-  <a href="#"><i class="fa-solid fa-location-dot"></i>Vibes</a>
-  <a href="login.php"><i class="fa fa-fw fa-user"></i> Login</a>
-  <a href ="signup.php"><i class="fa fa-fw fa-user"></i>Register</i></a>
-  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+                    <a class="active" href="index.php"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="#"><i class="fa-solid fa-bolt"></i>About Us</a>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+                    <a href="#"><i class="fa-solid fa-location-dot"></i>Vibes</a>
+                    <?php
+                        if(isset($_SESSION["username"]) and isset($_SESSION["RoleID"]) == 2){
+                            echo"<a href='profile.php'><i class='fa fa-fw fa-user'></i>Profile</a>";
+                            echo"<a href ='includes/logout.inc.php'><i class='fa fa-fw fa-user'></i>Logout</i></a>";
+                        }
+                        else if(isset($_SESSION["username"]) and isset($_SESSION["RoleID"]) == 1){
+                            echo"<a href='admin_profile.php'><i class='fa fa-fw fa-user'></i>Admin</a>";
+                            echo"<a href ='includes/logout.inc.php'><i class='fa fa-fw fa-user'></i>Logout</i></a>";
+                        }
+                        else {
+                            echo"<a href='login.php'><i class='fa fa-fw fa-user'></i> Login</a>";
+                            echo"<a href ='signup.php'><i class='fa fa-fw fa-user'></i>Register</i></a>";
+                        }
+                    
+                    ?>
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
                 </nav>
             </div>
         </header>

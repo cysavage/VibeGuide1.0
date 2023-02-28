@@ -44,7 +44,7 @@ function PasswordMatch($password,$passrepeat) {
     return $result;
 }
 function UseridExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHERE userid = ? OR email = ?;";
+    $sql = "SELECT * FROM user3 WHERE userid = ? OR email = ?;";
     $stmt = mysqli_stmt_init($conn);
     
     if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -66,7 +66,7 @@ function UseridExists($conn, $username, $email) {
     mysqli_stmt_close($stmt);
 }
 function createUser($conn, $firstname, $lastname, $email, $userid, $password) {
-    $sql = "INSERT INTO users(firstName,lastName,email,userid,password) VALUES(?,?,?,?,?);";
+    $sql = "INSERT INTO user3(firstName,lastName,email,userid,password,RoleID) VALUES(?,?,?,?,?,2);";
     $stmt = mysqli_stmt_init($conn);
     
     if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -74,11 +74,51 @@ function createUser($conn, $firstname, $lastname, $email, $userid, $password) {
         exit();
     }
     
-    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+    $hashPass = password_hash($password, PASSWORD_DEFAULT);
     
-    mysqli_stmt_bind_param($stmt,"sssss",$firstname, $lastname, $email, $userid, $hashedPwd);
+    mysqli_stmt_bind_param($stmt,"sssss",$firstname, $lastname, $email, $userid, $hashPass);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=none");
     exit();
+}
+
+
+
+
+function emptyInputLogin($username, $password) {
+    $result;
+    if(empty($username)|| empty($password)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+function loginUser($conn, $username, $password){
+    $UseridExists = UseridExists($conn, $username, $username);
+    
+    if($UseridExists === false){
+        
+        header("location: ../login.php?error=WrongLoginUser");
+        exit();
+    }
+    
+    $hashPass = $UseridExists["password"];
+    $checkedPass = password_verify($password, $hashPass);
+    
+    if($checkedPass === false){
+        header("location: ../login.php?error=WrongLoginPass");
+        exit();
+    }
+    else if($checkedPass === true){
+        session_start();
+        $_SESSION["usersID"] = $UseridExists["usersID"];
+        $_SESSION["username"] = $UseridExists["userid"];
+        
+        header("location: ../index.php");
+        exit();
+    }
+    
 }
