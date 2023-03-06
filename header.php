@@ -11,6 +11,8 @@ session_start();
 
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnY0bIPMi0otlGrN2PHefpU2TWdGeRFtQ &callback=Function.prototype"></script>
+  <script
+    src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDnY0bIPMi0otlGrN2PHefpU2TWdGeRFtQ"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
@@ -28,12 +30,13 @@ session_start();
 
       // Try to get the user's current location
       if (navigator.geolocation) {
+
         navigator.geolocation.getCurrentPosition(function (position) {
           // Check if the user is within the boundaries of Long Island
           if (longIslandBounds.contains(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))) {
             // Create a map centered on the user's current location
             var map = new google.maps.Map(document.getElementById('newmap'), {
-              zoom: 12,
+              zoom: 15,
               center: { lat: position.coords.latitude, lng: position.coords.longitude },
               restriction: {
                 latLngBounds: longIslandBounds,
@@ -87,6 +90,7 @@ session_start();
           }
         });
       }
+
     }
 
 
@@ -118,7 +122,7 @@ session_start();
         }
 
         ?>
-        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="contact.php"><i class="fa fa-fw fa-envelope"></i> Contact</a>
       </nav>
   </div>
   </header>

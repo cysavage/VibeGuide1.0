@@ -1,156 +1,97 @@
 <?php
-include_once("/VibeGuide.github.io-main/header.php");
+include_once('header.php');
 ?>
-<!doctype html>
-<html lang="en">
+<div class="body-image3">
+    <!doctype html>
+    <html lang="en">
 
-<head>
-    <title>Contact Form </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <title>Contact Form</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <style>
+            form {
+                height: 50%;
+                width: 50%;
+                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-family: 'Lucida Grande', monospace;
 
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+            }
+        </style>
+    </head>
 
-    <link rel="stylesheet" href="/VibeGuide.github.io-main/index.css">
+    <body>
+
+
+        <form id="contactForm" method="POST" enctype="multipart/form-data">
+            <br>
+            <p>We'r open for any suggestions or just to have a chat </p>
+            <br>
+            Name:<br>
+            <input type="text" size="19" name="name"><br><br>
+            Email:<br>
+            <input type="email" name="email"><br><br>
+            Message:<br>
+            <textarea name="message" rows="6″ cols=" 20″>
+    </textarea><br><br>
+            <input type="hidden" name="form-submitted" value="1">
+
+            <button type="submit" value="Submit">Send</button>
 
 
 
-</head>
+            <h3>Follow us here</h3>
+            <p>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </p>
 
-<body>
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Contact Form</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="wrapper">
-                        <div class="row no-gutters">
-                            <div class="col-lg-6">
-                                <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <h3>Contact us</h3>
-                                    <p class="mb-4">We're open for any suggestion or just to have a chat</p>
-                                    <div id="form-message-warning" class="mb-4"></div>
-                                    <div id="form-message-success" class="mb-4">
-                                        Your message was sent, thank you!
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 d-flex align-items-start">
+        </form>
 
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 d-flex align-items-start">
-                                                <div class="text">
-                                                    <p><span>Email:</span> <a
-                                                            href="mailto:cyrilkthomasest.1991@gmail.com">feedbackvibes@google.com</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 d-flex align-items-start">
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                        <input type="hidden" name="form-submitted" value="1">
 
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
+    </body>
 
-                                                    <input type="text" class="form-control" name="name" id="name"
-                                                        placeholder="Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" name="email" id="email"
-                                                        placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="subject" id="subject"
-                                                        placeholder="Subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <textarea name="message" class="form-control" id="message" cols="30"
-                                                        rows="4" placeholder="Create a message here"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="submit" value="Send Message" class="btn btn-primary">
-                                                    <div class="submitting"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="w-100 social-media mt-5">
-                                        <h3>Follow us here</h3>
-                                        <p>
-                                            <a href="#">Facebook</a>
-                                            <a href="#">Twitter</a>
-                                            <a href="#">Instagram</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 d-flex align-items-stretch">
-                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </html>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
 
-</body>
 
-</html>
-
-<script>
-    $(document).ready(function () {
-        $("#contactForm").submit(function (event) {
-            // Prevent form from submitting
-            event.preventDefault();
-
-            // Submit form data to PHP script
-            $.ajax({
-                url: "send-email.php",
-                type: "POST",
-                data: $(this).serialize(),
-                success: function (response) {
-                    // Show success or error message
-                    if (response == "success") {
-                        $("#form-message-success").html("Your message was sent, thank you!").show();
-                        $("#form-message-warning").hide();
-                        $("#contactForm")[0].reset();
-                    } else {
-                        $("#form-message-warning").html("Sorry, there was an error sending your message. Please try again later.").show();
-                        $("#form-message-success").hide();
+        $(document).ready(function () {
+            $('#contactForm').submit(function (event) {
+                // Prevent form from submitting
+                event.preventDefault();
+                // Submit form data to PHP script
+                $.ajax({
+                    url: 'send-email.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        // Show success or error message
+                        if (response == 'success') {
+                            $('#form-message-success').html('Your message was sent, thank you!').show();
+                            $('#form-message-warning').hide();
+                            $('#contactForm')[0].reset();
+                        } else {
+                            $('#form-message-warning').html('Sorry, there was an error sending your message. Please try again later.').show();
+                            $('#form-message-success').hide();
+                        }
                     }
-                }
+                });
             });
         });
-    });
 
-</script>
+
+
+    </script>
