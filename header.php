@@ -6,98 +6,83 @@ session_start();
 <html lang="en">
 
 <head>
+
+
+
+
   <meta charset="UTF-8">
   <title>VibeGuide</title>
 
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnY0bIPMi0otlGrN2PHefpU2TWdGeRFtQ &callback=Function.prototype"></script>
-  <script
-    src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDnY0bIPMi0otlGrN2PHefpU2TWdGeRFtQ"></script>
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/8f4da38e87.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-
-  <script>
-
-    function initMap() {
-      var longIslandBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(40.495949, -74.443828), // Southwest corner of Long Island
-        new google.maps.LatLng(41.161888, -71.856741)  // Northeast corner of Long Island
-      );
-
-      // Try to get the user's current location
-      if (navigator.geolocation) {
-
-        navigator.geolocation.getCurrentPosition(function (position) {
-          // Check if the user is within the boundaries of Long Island
-          if (longIslandBounds.contains(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))) {
-            // Create a map centered on the user's current location
-            var map = new google.maps.Map(document.getElementById('newmap'), {
-              zoom: 15,
-              center: { lat: position.coords.latitude, lng: position.coords.longitude },
-              restriction: {
-                latLngBounds: longIslandBounds,
-                strictBounds: true
-              }
-            });
-
-            // Add a marker at the user's current location
-            var marker = new google.maps.Marker({
-              position: { lat: position.coords.latitude, lng: position.coords.longitude },
-              map: map,
-              title: 'Your Location'
-            });
-          } else {
-            // If the user's location is not within Long Island, center the map on a default location
-            var centerLatLng = { lat: 40.730610, lng: -73.935242 };
-
-            var map = new google.maps.Map(document.getElementById('newmap'), {
-              zoom: 10,
-              center: centerLatLng,
-              restriction: {
-                latLngBounds: longIslandBounds,
-                strictBounds: true
-              }
-            });
-          }
-        },
-          function () {
-            // If the user's location cannot be determined, center the map on a default location
-            var centerLatLng = { lat: 40.730610, lng: -73.935242 };
-
-            var map = new google.maps.Map(document.getElementById('newmap'), {
-              zoom: 10,
-              center: centerLatLng,
-              restriction: {
-                latLngBounds: longIslandBounds,
-                strictBounds: true
-              }
-            });
-          });
-      } else {
-        // If geolocation is not supported, center the map on a default location
-        var centerLatLng = { lat: 40.730610, lng: -73.935242 };
-
-        var map = new google.maps.Map(document.getElementById('newmap'), {
-          zoom: 10,
-          center: centerLatLng,
-          restriction: {
-            latLngBounds: longIslandBounds,
-            strictBounds: true
-          }
-        });
-      }
-
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
     }
 
 
-  </script>
+    .mapboxgl-ctrl-geocoder {
+      width: 330px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 10px;
+
+
+
+    }
+
+    .mapboxgl-ctrl-geocoder input[type='text'] {
+      width: 330px;
+      padding: 28px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      background-color: #f5f5f5;
+      font-size: 15px;
+    }
+
+    .mapboxgl-ctrl-geocoder .suggestions {
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .mapboxgl-ctrl-geocoder .suggestion {
+      padding: 22px;
+      cursor: pointer;
+    }
+
+    .mapboxgl-ctrl-geocoder .suggestion:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+
 </head>
 
-<body onload="initMap()">
+<body>
+
+
+
+
+
+
+
 
   <div class="box-area">
     <header>
@@ -122,7 +107,7 @@ session_start();
         }
 
         ?>
-        <a href="contact.php"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href='contact.php'><i class="fa fa-fw fa-envelope"></i> Contact</a>
       </nav>
   </div>
   </header>
