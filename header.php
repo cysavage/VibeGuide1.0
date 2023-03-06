@@ -25,52 +25,7 @@ session_start();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/8f4da38e87.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
 
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-
-
-    .mapboxgl-ctrl-geocoder {
-      width: 330px;
-      font-size: 14px;
-      border-radius: 10px;
-      border: 10px;
-
-
-
-    }
-
-    .mapboxgl-ctrl-geocoder input[type='text'] {
-      width: 330px;
-      padding: 28px;
-      border: none;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      background-color: #f5f5f5;
-      font-size: 15px;
-    }
-
-    .mapboxgl-ctrl-geocoder .suggestions {
-      background-color: #fff;
-      border-radius: 4px;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    }
-
-    .mapboxgl-ctrl-geocoder .suggestion {
-      padding: 22px;
-      cursor: pointer;
-    }
-
-    .mapboxgl-ctrl-geocoder .suggestion:hover {
-      background-color: #f5f5f5;
-    }
   </style>
 
 </head>

@@ -32,17 +32,28 @@ include_once 'header.php';
                     const { longitude, latitude } = position.coords;
                     newmap.flyTo({ center: [longitude, latitude], zoom: 15 });
 
+                    new mapboxgl.Marker()
+                        .setLngLat([longitude, latitude])
+                        .addTo(newmap);
+
+
                     // Define a bounding box for Long Island
                     const bbox = [-73.7639, 40.5664, -71.8764, 41.1592];
+
 
                     // Add the geocoder control to the map with the bbox option
                     newmap.addControl(
                         new MapboxGeocoder({
                             accessToken: mapboxgl.accessToken,
                             mapboxgl: mapboxgl,
-                            bbox: bbox
-                        })
+                            bbox: bbox,
+                            position: 'top-left' // set geocoder position to top-left
+                        }),
+                        'top-left' // specify position on the map to add the geocoder control
                     );
+
+                }, error => {
+                    console.error(error);
                 });
             });
         </script>

@@ -7,12 +7,12 @@ body {
 	text-align: center;
 	background-color: black;
 	color:white;
+	margin:0;
+	padding:0;
 }
 .wrapper {
 	width: 1170px;
 	margin: 0 auto;
-	
-
 }
 header {
 	height: 100px;
@@ -213,3 +213,54 @@ div.body-image3 {
 	text-align: center;
 	vertical-align: middle;
 }
+
+body {
+	margin: 0;
+	padding: 0;
+  }
+
+  #map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+  }
+
+
+  .mapboxgl-ctrl-geocoder {
+	width: 400px;
+	font-size: 14px;
+	border-radius: 10px;
+	border: 10px;
+
+
+
+  }
+
+  .mapboxgl-ctrl-geocoder input[type='text'] {
+	width: 330px;
+	max-height:100px;
+	padding: 28px;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	background-color: #f5f5f5;
+	font-size: 15px;
+  }
+
+  .mapboxgl-ctrl-geocoder .suggestions {
+	max-height: 700px;
+	overflow-y: scroll;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	padding: 10px;
+  }
+
+  .mapboxgl-ctrl-geocoder .suggestion {
+	padding: 12px 22px 22px 22px;
+	cursor: pointer;
+  }
+
+  .mapboxgl-ctrl-geocoder .suggestion:hover {
+	background-color: #f5f5f5;
+  }
