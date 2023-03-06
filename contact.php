@@ -35,7 +35,7 @@ include_once('header.php');
 
         <form id="contactForm" method="POST" enctype="multipart/form-data">
             <br>
-            <p>We'r open for any suggestions or just to have a chat </p>
+            <p>We're open for any suggestions or just to have a chat </p>
             <br>
             Name:<br>
             <input type="text" size="19" name="name"><br><br>
